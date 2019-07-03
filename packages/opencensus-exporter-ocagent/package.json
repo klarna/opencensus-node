@@ -12,9 +12,10 @@
     "compile": "tsc -p .",
     "watch": "nodemon --exec tsc -p .",
     "fix": "gts fix",
-    "prepare": "npm run compile",
+    "prepare": "npm run snyk-protect; npm run compile",
     "pretest": "npm run compile",
-    "posttest": "npm run check"
+    "posttest": "npm run check",
+    "snyk-protect": "snyk protect"
   },
   "keywords": [
     "opencensus",
@@ -65,6 +66,8 @@
     "@opencensus/core": "^0.0.6",
     "@opencensus/nodejs": "^0.0.6",
     "google-proto-files": "^0.16.1",
-    "grpc": "^1.15.1"
-  }
+    "grpc": "^1.15.1",
+    "snyk": "^1.189.0"
+  },
+  "snyk": true
 }
